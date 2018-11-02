@@ -1,20 +1,26 @@
 //Business Logic for User
-function userOrder (){
-  this.pizza = pizza;
+function Order(){
+  this.pizzas = [];
+}
+
+Order.prototype.addToppingAndSize = function(size, toppings){
+  var newPizza = new Pizza(size, toppings);
+  this.pizzas.push(newPizza);
 }
 
 //Business Logic for Pizza
-function Pizza (size){
+function Pizza(size, toppings){
   this.toppings = [];
+  this.toppings.push(toppings);
   this.size = size;
-  this.cost = 0;
+  this.cost = [];
 }
 
 //Add topping to Pizza prototype
-Pizza.prototype.addTopping = function (topping){
-  var newTopping = new Topping(topping)
-  this.toppings.push(newTopping);
-}
+// Pizza.prototype.addTopping = function (topping){
+//   var newTopping = new Topping(topping)
+//   this.toppings.push(newTopping);
+// }
 
 
 //Cost prototype for Pizza topping and size selections
@@ -44,14 +50,9 @@ Pizza.prototype.addCost = function(topping, size, cost){
   console.log("total cost = $" + cost);
 }
 
-//Business Logic for Topping
-function Topping (name){
-  this.toppingName = name;
-}
 
 //Sizes:  12" = $10; 16" = $12; 20" = $15
 //Toppings:  cheese = $1; olives = $2;  artichoke = $3; anchovy = $3
-var pizza = new Pizza('10"');
-pizza.addTopping("olives");
-pizza.addTopping("artichokes");
+var order = new Order;
+order.addToppingsAndSize('12"',["artichoke", "anchovy"])
 pizza.addCost(pizza.toppings, pizza.size, pizza.cost)
