@@ -3,36 +3,30 @@ function Order(){
   this.pizzas = [];
 }
 
-Order.prototype.addToppingAndSize = function(size, toppings){
-  var newPizza = new Pizza(size, toppings);
+Order.prototype.addToppingAndSize = function(size, topping){
+  var newPizza = new Pizza(size, topping);
   this.pizzas.push(newPizza);
 }
 
 //Business Logic for Pizza
-function Pizza(size, toppings){
+function Pizza(size, topping){
   this.toppings = [];
-  this.toppings.push(toppings);
+  this.toppings = this.toppings.concat(topping);
   this.size = size;
-  this.cost = [];
+  this.cost = 0;
 }
-
-//Add topping to Pizza prototype
-// Pizza.prototype.addTopping = function (topping){
-//   var newTopping = new Topping(topping)
-//   this.toppings.push(newTopping);
-// }
 
 
 //Cost prototype for Pizza topping and size selections
-Pizza.prototype.addCost = function(topping, size, cost){
-  for(var i = 0; i < topping.length; i++){
-    if(topping[i].toppingName === "olives"){
+Pizza.prototype.addCost = function(size, cost){
+  for(var i = 0; i < this.toppings.length; i++){
+    if(this.toppings[i] === "olives"){
       cost += 2;
-    } else if(topping[i].toppingName === "artichokes"){
+    } else if(this.toppings[i] === "artichokes"){
       cost += 3;
-    } else if(topping[i].toppingName === "anchovy"){
+    } else if(this.toppings[i] === "anchovy"){
       cost += 3;
-    } else if(topping[i].toppingName === "cheese"){
+    } else if(this.toppings[i] === "cheese"){
       cost +=1;
     }
     console.log(cost);
@@ -50,9 +44,11 @@ Pizza.prototype.addCost = function(topping, size, cost){
   console.log("total cost = $" + cost);
 }
 
-
 //Sizes:  12" = $10; 16" = $12; 20" = $15
 //Toppings:  cheese = $1; olives = $2;  artichoke = $3; anchovy = $3
 var order = new Order;
-order.addToppingsAndSize('12"',["artichoke", "anchovy"])
-pizza.addCost(pizza.toppings, pizza.size, pizza.cost)
+var arrayToppings = ["olives", "artichokes"]
+order.addToppingAndSize('12"', arrayToppings)
+arrayToppings = ["anchovy", "cheese"]
+order.addToppingAndSize('16"', arrayToppings)
+order.pizzas[0].addCost(order.pizzas[0].size, order.pizzas[0].cost);
