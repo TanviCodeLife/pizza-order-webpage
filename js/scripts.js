@@ -1,12 +1,14 @@
-//Business Logic for User
+//Business Logic for Order
 function Order(){
   this.pizzas = [];
 }
+
 
 Order.prototype.addToppingAndSize = function(size, topping){
   var newPizza = new Pizza(size, topping);
   this.pizzas.push(newPizza);
 }
+
 
 //Business Logic for Pizza
 function Pizza(size, topping){
@@ -17,7 +19,6 @@ function Pizza(size, topping){
 }
 
 
-//Cost prototype for Pizza topping and size selections
 Pizza.prototype.addCost = function(size, cost){
   for(var i = 0; i < this.toppings.length; i++){
     if(this.toppings[i] === "olives"){
@@ -46,9 +47,13 @@ Pizza.prototype.addCost = function(size, cost){
 
 //Sizes:  12" = $10; 16" = $12; 20" = $15
 //Toppings:  cheese = $1; olives = $2;  artichoke = $3; anchovy = $3
-var order = new Order;
+
 var arrayToppings = ["olives", "artichokes"]
 order.addToppingAndSize('12"', arrayToppings)
 arrayToppings = ["anchovy", "cheese"]
 order.addToppingAndSize('16"', arrayToppings)
 order.pizzas[0].addCost(order.pizzas[0].size, order.pizzas[0].cost);
+
+//User Interface Logic
+
+var order = new Order;

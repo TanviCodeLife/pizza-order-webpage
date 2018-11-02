@@ -1,13 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Pig Dice</title>
+  <title>Pizza Order</title>
 </head>
 <body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Gourmet Pizza</h1>
+      <p class="lead">Build Your Pizza Here!</p>
+    </div>
+  </div>
+  <div class="container">
+    <form class="">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="olives" id="olives-check">
+        <label class="form-check-label" for="olives-check">
+          Olives
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="artichokes" id="artichokes-check">
+        <label class="form-check-label" for="artichokes-check">
+          Artichokes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="anchovy" id="anchovy-check">
+        <label class="form-check-label" for="anchovy-check">
+          Anchovy
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="cheese" id="cheese-check">
+        <label class="form-check-label" for="cheese-check">
+          Cheese
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="add-size" class="textColor">Select Size:</label>
+        <select class="form-control" id="add-size">
+          <option value='12"'>12 inch</option>
+          <option value='16"'>16 inch</option>
+          <option value='20"'>20 inch</option>
+        </select>
+      </div>
+      <div id="buttonAlign">
+        <button type="submit" class="btn btn-success" >Submit</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
