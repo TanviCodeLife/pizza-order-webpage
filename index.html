@@ -16,33 +16,45 @@
     </div>
   </div>
   <div class="container">
-    <form class="">
+    <form id="orderPizza">
+      <div class="form-group">
+        <label for="add-name" class="textColor">Name</label>
+        <input id="add-name" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="add-numb">No of Pizza:</label>
+        <select class="form-control" id="add-numb">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="olives" id="olives-check">
+        <input class="form-check-input" type="checkbox" name="topping" value="olives" id="olives-check">
         <label class="form-check-label" for="olives-check">
           Olives
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="artichokes" id="artichokes-check">
+        <input class="form-check-input" type="checkbox" name="topping" value="artichokes" id="artichokes-check">
         <label class="form-check-label" for="artichokes-check">
           Artichokes
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="anchovy" id="anchovy-check">
+        <input class="form-check-input" type="checkbox" name="topping" value="anchovy" id="anchovy-check">
         <label class="form-check-label" for="anchovy-check">
           Anchovy
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="cheese" id="cheese-check">
+        <input class="form-check-input" type="checkbox" name="topping" value="cheese" id="cheese-check">
         <label class="form-check-label" for="cheese-check">
           Cheese
         </label>
       </div>
       <div class="form-group">
-        <label for="add-size" class="textColor">Select Size:</label>
+        <label for="add-size">Select Size:</label>
         <select class="form-control" id="add-size">
           <option value='12"'>12 inch</option>
           <option value='16"'>16 inch</option>
@@ -53,6 +65,11 @@
         <button type="submit" class="btn btn-success" >Submit</button>
       </div>
     </form>
+  </div>
+  <div id="output">
+    <p>Size Selection: <span id="out-toppings"></span></p>
+    <p>Size Selection: <span id="out-size"></span></p>
+    <p>Pizza Cost: $<span id="out-cost"></span></p>
   </div>
 </body>
 </html>

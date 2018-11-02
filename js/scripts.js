@@ -43,17 +43,38 @@ Pizza.prototype.addCost = function(size, cost){
     console.log(cost);
   }
   console.log("total cost = $" + cost);
+  return cost;
 }
-
-//Sizes:  12" = $10; 16" = $12; 20" = $15
-//Toppings:  cheese = $1; olives = $2;  artichoke = $3; anchovy = $3
-
-var arrayToppings = ["olives", "artichokes"]
-order.addToppingAndSize('12"', arrayToppings)
-arrayToppings = ["anchovy", "cheese"]
-order.addToppingAndSize('16"', arrayToppings)
-order.pizzas[0].addCost(order.pizzas[0].size, order.pizzas[0].cost);
 
 //User Interface Logic
 
 var order = new Order;
+
+function orderPizza(size, topping){
+  order.addToppingAndSize(size, topping);
+  var endCost = order.pizzas[0].addCost(order.pizzas[0].size, order.pizzas[0].cost);
+  return endCost;
+}
+
+$(document).ready(function(){
+
+  $("form#orderPizza").submit(function(event){
+    event.preventDefault();
+    var numbInput = $("select#add-numb").val();
+    var arrayToppings = [];
+    var sizeInput = $("select#add-size").val();
+    $("input:checkbox[name=topping]:checked").each(function(){
+      arrayToppings.push($(this).val());
+    });
+
+    var finalCost = orderPizza(sizeInput, arrayToppings);
+    var stringToppings = arrayToppings.toString();
+
+    $("#out-toppings").html(stringToppings);
+    $("#out-size").html(sizeInput);
+    $("#out-cost").html(finalCost);
+
+
+  });
+
+});
