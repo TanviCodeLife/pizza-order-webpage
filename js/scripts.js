@@ -1,7 +1,7 @@
 //Business Logic for User
-// function User (){
-//   this.pizza = pizza;
-// }
+function userOrder (){
+  this.pizza = pizza;
+}
 
 //Business Logic for Pizza
 function Pizza (size){
@@ -17,7 +17,7 @@ Pizza.prototype.addTopping = function (topping){
 }
 
 
-//Cost prototype for Pizza topping selections
+//Cost prototype for Pizza topping and size selections
 Pizza.prototype.addCost = function(topping, size, cost){
   for(var i = 0; i < topping.length; i++){
     if(topping[i].toppingName === "olives"){
@@ -41,7 +41,7 @@ Pizza.prototype.addCost = function(topping, size, cost){
     cost += 20;
     console.log(cost);
   }
-  console.log("total cost = " + cost);
+  console.log("total cost = $" + cost);
 }
 
 //Business Logic for Topping

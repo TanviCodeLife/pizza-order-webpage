@@ -13,18 +13,18 @@
 
 
 ### Specifications
-- [ ] _**A user can enter name and start a Pizza order.**_
+- [x] _**A user can enter name and start a Pizza order.**_
 * _Input: Enter Name and click submit._
 * _Output: Form should appear for user to enter pizza order._
-- [ ] _**User can select provided size options.**_
+- [x] _**User can select provided size options.**_
 * _Input: Select One- 12", 16" or 20" pizza. User selects 12" pizza._
 * _Output: Selection gets added to the Pizza Order as Size:12"._
-- [ ] _**User can select provided topping options.**_
+- [x] _**User can select provided topping options.**_
 * _Input: Select One- cheese, olives, artichoke, anchovy. User selects artichokes._
 * _Output: Selection gets added to the Pizza Order as Toppings: artichokes._
-- [ ] _**User can see cost of sizes and each toppings. These will get added to the total cost based on selections**_
+- [x] _**User can see cost of sizes and each toppings. These will get added to the total cost based on selections**_
 * _Input: Selections of - Pizza Size:12" @ Price $10 and Pizza Toppings Selections: artichoke @ Price:$3; olives @ Price:$1_
-* _Output: Total Cost of the Pizza is $14._
+* _Output: Total Cost of the Pizza is $10 + $3 + $1 = $14._
 
 
 ### Complete setup/installation instructions
