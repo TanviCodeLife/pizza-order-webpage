@@ -1,0 +1,24 @@
+/*body {
+  height: 100%;
+  background-image: url("file:///Users/Tanvi/Desktop/beep-boop/img/beep.jpg");
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}*/
+
+.jumbotron{
+  text-align: center;
+}
+
+#buttonAlign{
+  margin-left: 45%;
+}
+
+.col-lg-8{
+  margin-left: 18%;
+}
+
+#output{
+  display: none;
+  text-align: center;
+}

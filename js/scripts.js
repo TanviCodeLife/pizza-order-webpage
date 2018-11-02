@@ -53,27 +53,28 @@ var order = new Order;
 function orderPizza(size, topping){
   order.addToppingAndSize(size, topping);
   var endCost = order.pizzas[0].addCost(order.pizzas[0].size, order.pizzas[0].cost);
+  $("#order-pizza").hide();
+  $("#output").show();
   return endCost;
 }
 
 $(document).ready(function(){
 
-  $("form#orderPizza").submit(function(event){
+  $("form#order-pizza").submit(function(event){
     event.preventDefault();
-    var numbInput = $("select#add-numb").val();
+    var nameInput = $("input#add-name").val();
     var arrayToppings = [];
     var sizeInput = $("select#add-size").val();
     $("input:checkbox[name=topping]:checked").each(function(){
       arrayToppings.push($(this).val());
     });
-
-    var finalCost = orderPizza(sizeInput, arrayToppings);
     var stringToppings = arrayToppings.toString();
+    var finalCost = orderPizza(sizeInput, arrayToppings);
 
+    $("#name").html(nameInput);
     $("#out-toppings").html(stringToppings);
     $("#out-size").html(sizeInput);
     $("#out-cost").html(finalCost);
-
 
   });
 
