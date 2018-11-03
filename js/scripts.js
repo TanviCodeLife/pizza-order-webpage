@@ -30,19 +30,19 @@ Pizza.prototype.addCost = function(size, cost){
     } else if(this.toppings[i] === "cheese"){
       cost +=1;
     }
-    console.log(cost);
+    //console.log(cost);
   }
   if(size === '12"'){
     cost += 10;
-    console.log(cost);
+    //console.log(cost);
   } else if(size === '16"'){
     cost += 12;
     console.log(cost);
   } else if(size === '20"'){
     cost += 20;
-    console.log(cost);
+    //console.log(cost);
   }
-  console.log("total cost = $" + cost);
+  //console.log("total cost = $" + cost);
   return cost;
 }
 
